@@ -1,4 +1,4 @@
-package com.alvaroag.cpk;
+package com.alvaroag.zeusTranslator;
 
 import java.util.HashMap;
 
@@ -7,7 +7,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 
-public class CPK extends InputMethodService {
+public class ZEUSTranslator extends InputMethodService {
 	private static final HashMap<Integer,Integer> zeusTranslation;
 
 	static {
