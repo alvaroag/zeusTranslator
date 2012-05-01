@@ -79,6 +79,8 @@ public class ZEUSTranslator extends InputMethodService {
 
 	@Override
 	public boolean onKeyDown(int keyCode,KeyEvent event) {
+		if (getCurrentInputConnection() == null)
+			return false;
 		if (zeusTranslation.containsKey(event.getScanCode())) {
 			int finalKeyCode = zeusTranslation.get(event.getScanCode());
 			getCurrentInputConnection().sendKeyEvent(new KeyEvent(0,finalKeyCode));
@@ -89,6 +91,8 @@ public class ZEUSTranslator extends InputMethodService {
 
 	@Override
 	public boolean onKeyUp(int keyCode,KeyEvent event) {
+		if (getCurrentInputConnection() == null)
+			return false;
 		if (zeusTranslation.containsKey(event.getScanCode())) {
 			int finalKeyCode = zeusTranslation.get(event.getScanCode());
 			getCurrentInputConnection().sendKeyEvent(new KeyEvent(1,finalKeyCode));
